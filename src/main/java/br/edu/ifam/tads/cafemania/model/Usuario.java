@@ -4,11 +4,13 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+//import javax.persistence.EnumType;
+//import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Usuario {
@@ -17,13 +19,13 @@ public class Usuario {
 	private Long id;
 	@Column(nullable=false, unique=false)
 	private String nome;
-	@Column(nullable=false, unique=false)
+	@Column
 	private String cpf;
-	@Column(nullable=false, unique=false)
+	@Temporal(TemporalType.DATE)
 	private Date datanascimento;
-	@Column(nullable=false, unique=false)
+	@Column
 	private String email;
-	@Column(nullable=false, unique=false)
+	@Column
 	private String tipoUsuario;
 	/* Problema no Enum
 	 * @Enumerated(EnumType.STRING)
@@ -78,11 +80,9 @@ public class Usuario {
 		return datanascimento;
 	}
 
-
 	public void setDatanascimento(Date datanascimento) {
 		this.datanascimento = datanascimento;
 	}
-
 
 	public String getEmail() {
 		return email;

@@ -55,7 +55,5 @@ public class BancadeCafe {
 	public void setDono(Usuario dono) {
 		Dono = dono;
 	}
-	
-	
-	
+		
 }

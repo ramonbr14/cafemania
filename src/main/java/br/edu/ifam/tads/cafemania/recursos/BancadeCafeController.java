@@ -42,7 +42,7 @@ public class BancadeCafeController {
 		return ResponseEntity.notFound().build();
 	}
 	
-	@PostMapping
+	@PostMapping("/bancacadastro")
 	public ResponseEntity<BancadeCafe> postBancadeCafe(@RequestBody BancadeCafe bancadeCafe){
 		BancadeCafe banca = bancadeCafeService.criarBancadeCafe(bancadeCafe);
 		return ResponseEntity.status(HttpStatus.CREATED).body(banca);
